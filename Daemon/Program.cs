@@ -1,21 +1,42 @@
-﻿namespace Ast.CleanDaemon.Daemon;
+﻿using Daemon.Model;
+namespace Ast.CleanDaemon.Daemon;
 
-public static class Daemon
+public class Daemon
 {
+    Process currentDuty;
     private static void Main(string[] args)
     {
+        
         if (0 == args.Length)
         {
-            DisplayHint();
-            Console.ReadKey();
+            DisplayHintMissingFile();
         }
-        string file = args[0];
-        Console.WriteLine(file);
+        currentDuty = new Process(args[0]);
+        if ("-s" == args[1].ToLower()) currentDuty.IsSimulation = true;
+        Run(currentDuty);
     }
 
-    private static void DisplayHint()
+    private static void Run(Process currentDuty)
     {
-        Console.WriteLine("Missing config File.\nCleanDaemon .\\filestodeletew");
+        try
+        {
+            string[] data = File.ReadAllLines(currentDuty.ProcessFile);
+            foreach (var processPropertyLine in data)
+            {
+                string[] taskProoperties = processPropertyLine.Split('|');
+
+            }
+        }
+        catch(Exception ex)
+        {
+
+        }
+    }
+
+    private static void DisplayHintMissingFile()
+    {
+        Console.WriteLine("Missing config File.\nCleanDaemon .\\filestodelete [-s]");
         Environment.Exit(-1);
+        Console.ReadKey();
     }
 }
