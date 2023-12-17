@@ -38,6 +38,7 @@
             SelectButton = new Button();
             ConfigLabel = new Label();
             PreviewListBox = new ListBox();
+            SubDirectoriesCheckBox = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)MonthNumericDropDown).BeginInit();
             SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             DriveComboBox.Name = "DriveComboBox";
             DriveComboBox.Size = new Size(151, 28);
             DriveComboBox.TabIndex = 1;
+            DriveComboBox.SelectedIndexChanged += DriveComboBox_SelectedIndexChanged;
             // 
             // DirectoryLabel
             // 
@@ -72,13 +74,13 @@
             DirectoryListBox.FormattingEnabled = true;
             DirectoryListBox.Location = new Point(15, 104);
             DirectoryListBox.Name = "DirectoryListBox";
-            DirectoryListBox.Size = new Size(151, 284);
+            DirectoryListBox.Size = new Size(214, 324);
             DirectoryListBox.TabIndex = 3;
             // 
             // MonthLabel1
             // 
             MonthLabel1.AutoSize = true;
-            MonthLabel1.Location = new Point(207, 19);
+            MonthLabel1.Location = new Point(235, 19);
             MonthLabel1.Name = "MonthLabel1";
             MonthLabel1.Size = new Size(61, 20);
             MonthLabel1.TabIndex = 4;
@@ -86,7 +88,7 @@
             // 
             // MonthNumericDropDown
             // 
-            MonthNumericDropDown.Location = new Point(207, 42);
+            MonthNumericDropDown.Location = new Point(235, 42);
             MonthNumericDropDown.Name = "MonthNumericDropDown";
             MonthNumericDropDown.Size = new Size(74, 27);
             MonthNumericDropDown.TabIndex = 5;
@@ -95,7 +97,7 @@
             // MonthLabel2
             // 
             MonthLabel2.AutoSize = true;
-            MonthLabel2.Location = new Point(287, 44);
+            MonthLabel2.Location = new Point(315, 44);
             MonthLabel2.Name = "MonthLabel2";
             MonthLabel2.Size = new Size(60, 20);
             MonthLabel2.TabIndex = 6;
@@ -103,7 +105,7 @@
             // 
             // SelectButton
             // 
-            SelectButton.Location = new Point(207, 104);
+            SelectButton.Location = new Point(261, 243);
             SelectButton.Name = "SelectButton";
             SelectButton.Size = new Size(94, 29);
             SelectButton.TabIndex = 7;
@@ -128,11 +130,24 @@
             PreviewListBox.Size = new Size(392, 324);
             PreviewListBox.TabIndex = 8;
             // 
+            // SubDirectoriesCheckBox
+            // 
+            SubDirectoriesCheckBox.AutoSize = true;
+            SubDirectoriesCheckBox.Checked = true;
+            SubDirectoriesCheckBox.CheckState = CheckState.Checked;
+            SubDirectoriesCheckBox.Location = new Point(232, 78);
+            SubDirectoriesCheckBox.Name = "SubDirectoriesCheckBox";
+            SubDirectoriesCheckBox.Size = new Size(141, 24);
+            SubDirectoriesCheckBox.TabIndex = 10;
+            SubDirectoriesCheckBox.Text = "inkl. Unterordner";
+            SubDirectoriesCheckBox.UseVisualStyleBackColor = true;
+            // 
             // ASTMainWindow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(SubDirectoriesCheckBox);
             Controls.Add(ConfigLabel);
             Controls.Add(PreviewListBox);
             Controls.Add(SelectButton);
@@ -163,5 +178,6 @@
         private Button SelectButton;
         private Label ConfigLabel;
         private ListBox PreviewListBox;
+        private CheckBox SubDirectoriesCheckBox;
     }
 }
