@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "CleanDaemonStarter": {
+      "commandName": "Project",
+      "commandLineArgs": "-gui",
+      "workingDirectory": "D:\\c#\\CleanDaemon\\CleanDaemonStarter\\bin"
+    }
+  }
+}

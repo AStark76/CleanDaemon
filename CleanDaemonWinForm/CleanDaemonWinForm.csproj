@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <BaseOutputPath>D:\c#\CleanDaemon\CleanDaemonStarter\bin</BaseOutputPath>
+    <BaseIntermediateOutputPath>D:\c#\CleanDaemon\CleanDaemonStarter\obj</BaseIntermediateOutputPath>
+  </PropertyGroup>
+
+</Project>

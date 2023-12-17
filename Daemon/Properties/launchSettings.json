@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Daemon": {
+      "commandName": "Project",
+      "commandLineArgs": "test.cd"
+    }
+  }
+}
