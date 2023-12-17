@@ -39,6 +39,9 @@
             ConfigLabel = new Label();
             PreviewListBox = new ListBox();
             SubDirectoriesCheckBox = new CheckBox();
+            saveFileDialog = new SaveFileDialog();
+            SaveButton = new Button();
+            ResetButton = new Button();
             ((System.ComponentModel.ISupportInitialize)MonthNumericDropDown).BeginInit();
             SuspendLayout();
             // 
@@ -74,6 +77,7 @@
             DirectoryListBox.FormattingEnabled = true;
             DirectoryListBox.Location = new Point(15, 104);
             DirectoryListBox.Name = "DirectoryListBox";
+            DirectoryListBox.SelectionMode = SelectionMode.MultiSimple;
             DirectoryListBox.Size = new Size(214, 324);
             DirectoryListBox.TabIndex = 3;
             // 
@@ -142,11 +146,37 @@
             SubDirectoriesCheckBox.Text = "inkl. Unterordner";
             SubDirectoriesCheckBox.UseVisualStyleBackColor = true;
             // 
+            // saveFileDialog
+            // 
+            saveFileDialog.DefaultExt = "ASTCD";
+            // 
+            // SaveButton
+            // 
+            SaveButton.Location = new Point(522, 399);
+            SaveButton.Name = "SaveButton";
+            SaveButton.Size = new Size(94, 29);
+            SaveButton.TabIndex = 11;
+            SaveButton.Text = "Speichern";
+            SaveButton.UseVisualStyleBackColor = true;
+            SaveButton.Click += SaveButton_Click;
+            // 
+            // ResetButton
+            // 
+            ResetButton.Location = new Point(396, 399);
+            ResetButton.Name = "ResetButton";
+            ResetButton.Size = new Size(87, 29);
+            ResetButton.TabIndex = 12;
+            ResetButton.Text = "Neu";
+            ResetButton.UseVisualStyleBackColor = true;
+            ResetButton.Click += ResetButton_Click;
+            // 
             // ASTMainWindow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ResetButton);
+            Controls.Add(SaveButton);
             Controls.Add(SubDirectoriesCheckBox);
             Controls.Add(ConfigLabel);
             Controls.Add(PreviewListBox);
@@ -179,5 +209,8 @@
         private Label ConfigLabel;
         private ListBox PreviewListBox;
         private CheckBox SubDirectoriesCheckBox;
+        private SaveFileDialog saveFileDialog;
+        private Button SaveButton;
+        private Button ResetButton;
     }
 }

@@ -1,5 +1,6 @@
 using CleanDaemonWinForm.Model;
 using System.DirectoryServices;
+using System.Text;
 
 namespace CleanDaemonWinForm
 {
@@ -14,7 +15,7 @@ namespace CleanDaemonWinForm
         {
             foreach (var item in DirectoryListBox.SelectedItems)
             {
-                PreviewListBox.Items.Add($"{item.ToString}|{MonthNumericDropDown.Value.ToString()}|{SubDirectoriesCheckBox.Checked}");
+                PreviewListBox.Items.Add($"{item.ToString()}|{MonthNumericDropDown.Value.ToString()}|{SubDirectoriesCheckBox.Checked}");
             }
         }
 
@@ -38,8 +39,33 @@ namespace CleanDaemonWinForm
         {
             DirectoryListBox.Items.Clear();
             string drive = (selectedText as string).Split('-')[0].Trim() ?? "c:\\";
-            string[] directories = Directory.GetDirectories(drive);
+            DirectoryItem[] directories = Directory.GetDirectories(drive)
+                .Select(dir => new DirectoryItem(new DirectoryInfo(dir)))
+                .ToArray();
             DirectoryListBox.Items.AddRange(directories);
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            DriveComboBox.SelectedIndex = 0;
+            PreviewListBox.Items.Clear();
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = saveFileDialog.ShowDialog();
+            if(DialogResult.OK == dialogResult)
+            {
+                string fileName = saveFileDialog.FileName;
+                StringBuilder sb = new StringBuilder();
+                foreach (var item in PreviewListBox.Items)
+                {
+                    string line = item as string;
+                    sb.AppendLine(line);
+                }
+
+                File.WriteAllText(fileName, sb.ToString());
+            }
         }
     }
 }
