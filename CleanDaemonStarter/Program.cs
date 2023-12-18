@@ -9,6 +9,11 @@ public static class Program
         {
             Process.Start("CleanDaemonWinForm.exe");
         }
-        Console.ReadLine();
+        else
+        {
+            string parameter = string.Join(" ", args);
+            
+            Process.Start("Daemon", parameter);
+        }
     }
 }

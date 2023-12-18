@@ -3,15 +3,19 @@ namespace Ast.CleanDaemon.Daemon;
 
 public static class Daemon
 {
-    
+
     private static void Main(string[] args)
     {
         Process currentDuty = null;
         if (0 == args.Length)
             DisplayHintMissingFile();
-        else if(2 == args.Length)
-            if ("-s" == args[1].ToLower()) currentDuty.IsSimulation = true;
-        currentDuty = new Process(args[0]);
+        else
+        {
+            currentDuty = new Process(args[0]);
+            if (2 == args.Length)
+                currentDuty.IsSimulation = "-s" == args[1].ToLower();
+        }
+
         PrepareRun(currentDuty);
     }
 
@@ -26,14 +30,12 @@ public static class Daemon
                 Run(taskProoperties, currentDuty);
             }
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
         }
-        finally
-        {
-            Environment.Exit(-1);
-        }
+
+        Environment.Exit(0);
     }
 
     private static void Run(string[] taskProoperties, Process inProcess)
@@ -43,7 +45,7 @@ public static class Daemon
         {
             month = 6;
         }
-        bool.TryParse(taskProoperties[1], out bool isSubdirectory);
+        bool.TryParse(taskProoperties[2], out bool isSubdirectory);
         if (inProcess.IsSimulation)
             Delete(path, month, isSubdirectory, Console.WriteLine);
         else
@@ -53,19 +55,25 @@ public static class Daemon
 
     private static void Delete(string path, int month, bool isSubdirectory, Action<string> inAction)
     {
-        string[] files = Directory.GetFiles(path);
-        foreach (var item in files)
-        {
-            inAction(item);
-        }
         if (isSubdirectory)
         {
             string[] directories = Directory.GetDirectories(path);
             foreach (var d in directories)
             {
+
                 Delete(d, month, isSubdirectory, inAction);
             }
         }
+        string[] files = Directory.GetFiles(path);
+        foreach (var item in files)
+        {
+            FileInfo fileInfo = new FileInfo(item);
+            if (DateTime.Today.AddDays((-1) * month) >= fileInfo.CreationTime.Date)
+            {
+                inAction(item);
+            }
+        }
+        return;
     }
 
     private static void DisplayHintMissingFile()

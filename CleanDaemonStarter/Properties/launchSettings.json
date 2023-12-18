@@ -2,7 +2,7 @@
   "profiles": {
     "CleanDaemonStarter": {
       "commandName": "Project",
-      "commandLineArgs": "-gui",
+      "commandLineArgs": "D:\\c#\\CleanDaemon\\Daemon\\bin\\Debug\\net8.0\\test.astcd -s",
       "workingDirectory": "D:\\c#\\CleanDaemon\\CleanDaemonStarter\\bin"
     }
   }

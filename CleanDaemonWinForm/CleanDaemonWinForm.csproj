@@ -6,8 +6,13 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BaseOutputPath>D:\c#\CleanDaemon\CleanDaemon\CleanDaemonStarter\bin</BaseOutputPath>
-    <BaseIntermediateOutputPath>D:\c#\CleanDaemon\CleanDaemon\obj</BaseIntermediateOutputPath>
+    <BaseOutputPath>\bin</BaseOutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="bin\Debug\net8.0-windows\CleanDaemonWinForm.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
