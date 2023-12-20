@@ -2,7 +2,7 @@
   "profiles": {
     "Daemon": {
       "commandName": "Project",
-      "commandLineArgs": "d:\\c#\\CleanDaemon\\Daemon\\bin\\Debug\\net8.0\\test.astcd"
+      "commandLineArgs": "-gui"
     }
   }
 }
