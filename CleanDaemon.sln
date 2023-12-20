@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Daemon", "Daemon\Daemon.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanDaemonStarter", "CleanDaemonStarter\CleanDaemonStarter.csproj", "{581C7525-E85F-43FC-BFA0-CC948B41EAD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanDaemonWinForm", "CleanDaemonWinForm\CleanDaemonWinForm.csproj", "{B35CF50C-EC69-4F7F-89B8-B999E56E1961}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanDaemonWinForm", "CleanDaemonWinForm\CleanDaemonWinForm.csproj", "{B35CF50C-EC69-4F7F-89B8-B999E56E1961}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{AC0B1B37-885E-44F5-A02C-6EDC8D24FC7C}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\A. Stark\Pictures\CleanDaemon\CleanDaemon.md = C:\Users\A. Stark\Pictures\CleanDaemon\CleanDaemon.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
