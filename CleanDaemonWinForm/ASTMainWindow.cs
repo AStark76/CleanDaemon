@@ -45,7 +45,8 @@ namespace CleanDaemonWinForm
             if(DialogResult.OK == folderBrowserDialog1.ShowDialog())
             {
                 string selectedFolder = folderBrowserDialog1.SelectedPath;
-                PreviewListBox.Items.Add($"{selectedFolder}|{MonthNumericDropDown.Value}|{SubDirectoriesCheckBox.Checked}");
+                PreviewListBox.Items.Add($"{selectedFolder}|{MonthNumericDropDown.Value}" +
+                    $"|{SubDirectoriesCheckBox.Checked}|{DeleteEmptySubFolderCheckBox}");
             }
         }
     }
