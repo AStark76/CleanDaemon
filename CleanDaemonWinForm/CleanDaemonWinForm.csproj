@@ -6,7 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BaseOutputPath>\bin</BaseOutputPath>
+    <BaseOutputPath>D:\c#\AstCleanDaemon\CleanDaemonWinForm\bin</BaseOutputPath>
+    <BaseIntermediateOutputPath>D:\c#\AstCleanDaemon\CleanDaemonWinForm\obj</BaseIntermediateOutputPath>
   </PropertyGroup>
 
   <ItemGroup>

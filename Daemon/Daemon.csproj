@@ -5,7 +5,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <BaseOutputPath>\bin</BaseOutputPath>
+    <BaseOutputPath>D:\c#\AstCleanDaemon\Daemon\bin</BaseOutputPath>
+    <BaseIntermediateOutputPath>D:\c#\AstCleanDaemon\Daemon\obj</BaseIntermediateOutputPath>
   </PropertyGroup>
 
 </Project>

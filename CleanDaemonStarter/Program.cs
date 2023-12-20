@@ -15,5 +15,6 @@ public static class Program
             
             Process.Start("Daemon", parameter);
         }
+        Environment.Exit(0);
     }
 }
