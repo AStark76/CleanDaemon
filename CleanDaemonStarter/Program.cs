@@ -3,18 +3,25 @@
 namespace CleanDaemonStarter;
 
 public static class Program
-{    static void Main(string[] args)
+{   
+    /// <summary>
+    /// Default start method, starts winform or daemon depending on the parameter
+    /// </summary>
+    /// <param name="args"></param>
+    static void Main(string[] args)
     {
+        Process _process;
         if ("-gui".Equals(args[0].ToLower()))
         {
-            Process.Start("CleanDaemonWinForm.exe");
+            _process = Process.Start("CleanDaemonWinForm.exe");
         }
         else
         {
             string parameter = string.Join(" ", args);
-            
-            Process.Start("Daemon", parameter);
+
+            _process = Process.Start("Daemon", parameter);
         }
+        while (!_process.HasExited) { }
         Environment.Exit(0);
     }
 }

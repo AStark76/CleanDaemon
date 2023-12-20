@@ -139,9 +139,9 @@
             DeleteEmptySubFolderCheckBox.AutoSize = true;
             DeleteEmptySubFolderCheckBox.Location = new Point(11, 100);
             DeleteEmptySubFolderCheckBox.Name = "DeleteEmptySubFolderCheckBox";
-            DeleteEmptySubFolderCheckBox.Size = new Size(202, 24);
+            DeleteEmptySubFolderCheckBox.Size = new Size(168, 24);
             DeleteEmptySubFolderCheckBox.TabIndex = 14;
-            DeleteEmptySubFolderCheckBox.Text = "leere Unterordner löschen";
+            DeleteEmptySubFolderCheckBox.Text = "leere Ordner löschen";
             DeleteEmptySubFolderCheckBox.UseVisualStyleBackColor = true;
             // 
             // ASTMainWindow
