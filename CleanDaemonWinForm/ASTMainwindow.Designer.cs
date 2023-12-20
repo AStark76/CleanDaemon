@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ASTMainWindow));
             MonthLabel1 = new Label();
             MonthNumericDropDown = new NumericUpDown();
             MonthLabel2 = new Label();
@@ -39,6 +40,7 @@
             ResetButton = new Button();
             folderBrowserDialog1 = new FolderBrowserDialog();
             FolderSelectButton = new Button();
+            DeleteEmptySubFolderCheckBox = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)MonthNumericDropDown).BeginInit();
             SuspendLayout();
             // 
@@ -124,7 +126,7 @@
             // 
             // FolderSelectButton
             // 
-            FolderSelectButton.Location = new Point(14, 115);
+            FolderSelectButton.Location = new Point(14, 140);
             FolderSelectButton.Name = "FolderSelectButton";
             FolderSelectButton.Size = new Size(163, 29);
             FolderSelectButton.TabIndex = 13;
@@ -132,11 +134,22 @@
             FolderSelectButton.UseVisualStyleBackColor = true;
             FolderSelectButton.Click += FolderSelectButton_Click;
             // 
+            // DeleteEmptySubFolderCheckBox
+            // 
+            DeleteEmptySubFolderCheckBox.AutoSize = true;
+            DeleteEmptySubFolderCheckBox.Location = new Point(11, 100);
+            DeleteEmptySubFolderCheckBox.Name = "DeleteEmptySubFolderCheckBox";
+            DeleteEmptySubFolderCheckBox.Size = new Size(168, 24);
+            DeleteEmptySubFolderCheckBox.TabIndex = 14;
+            DeleteEmptySubFolderCheckBox.Text = "leere Ordner löschen";
+            DeleteEmptySubFolderCheckBox.UseVisualStyleBackColor = true;
+            // 
             // ASTMainWindow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(DeleteEmptySubFolderCheckBox);
             Controls.Add(FolderSelectButton);
             Controls.Add(ResetButton);
             Controls.Add(SaveButton);
@@ -146,6 +159,7 @@
             Controls.Add(MonthLabel2);
             Controls.Add(MonthNumericDropDown);
             Controls.Add(MonthLabel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ASTMainWindow";
             Text = "AST CleanDaemon";
             ((System.ComponentModel.ISupportInitialize)MonthNumericDropDown).EndInit();
@@ -165,5 +179,6 @@
         private Button ResetButton;
         private FolderBrowserDialog folderBrowserDialog1;
         private Button FolderSelectButton;
+        private CheckBox DeleteEmptySubFolderCheckBox;
     }
 }
