@@ -10,19 +10,25 @@ namespace CleanDaemonWinForm
         {
             InitializeComponent();
         }
-        private void SetDirectories(object selectedText)
-        {
-            string drive = (selectedText as string).Split('-')[0].Trim() ?? "c:\\";
-            DirectoryItem[] directories = Directory.GetDirectories(drive)
-                .Select(dir => new DirectoryItem(new DirectoryInfo(dir)))
-                .ToArray();
-        }
 
+        /// <summary>
+        /// Resets the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ResetButton_Click(object sender, EventArgs e)
         {
             PreviewListBox.Items.Clear();
+            SubDirectoriesCheckBox.Checked = true;
+            DeleteEmptySubFolderCheckBox.Checked = false;
         }
 
+        /// <summary>
+        /// Stores the collected information in a task file-ASTCD. File is humanfriendly
+        /// readable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveButton_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = saveFileDialog.ShowDialog();
@@ -40,6 +46,12 @@ namespace CleanDaemonWinForm
             }
         }
 
+        /// <summary>
+        /// Let the user select a dirctionary and than gathers all the 
+        /// information from the form and stores it as a string.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FolderSelectButton_Click(object sender, EventArgs e)
         {
             if(DialogResult.OK == folderBrowserDialog1.ShowDialog())
